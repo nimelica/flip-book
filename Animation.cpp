@@ -41,17 +41,14 @@ void Animation::render(RenderWindow* window) {
 }
 
 void Animation::update() {
-	if (frameCounter == frameTime)                                      //if update function called as much as frame time
-	{
-		currentFrameNumber = (currentFrameNumber + 1) % totalFrame; //current frame number start from 0 to 9
-		frameCounter = 0;                                           //+1 increse it by it cannot access the limit(10) by using % 
-	}                                                                   //then make the counter empty
-	else
-	{
+	if (frameCounter == frameTime){
+		currentFrameNumber = (currentFrameNumber + 1) % totalFrame; 
+		frameCounter = 0;                                           
+	}else{
 		frameCounter++;
 	}
 }
 
-void Animation::frameTimeUpdate(int time) {                          //we can change animation speed by updating value
+void Animation::frameTimeUpdate(int time) {                          
 	frameTime = time;
 }
